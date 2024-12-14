@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.dani.pruebaidealista.ui.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.dani.pruebaidealista.ui.list.MainFragment"
+        android:label="@string/ads"
+        tools:layout="@layout/activity_ads_list" >
+        <action
+            android:id="@+id/action_mainFragment_to_detailXML"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/translate_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/translate_out" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_detailCompose"
+            app:destination="@id/detailFragment2"
+            app:enterAnim="@anim/translate_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/translate_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.dani.pruebaidealista.ui.detailxml.DetailFragmentXml"
+        android:label="fragment_detail"
+        tools:layout="@layout/activity_ads_detail">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="app://film/{id}" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment2"
+        android:name="com.dani.pruebaidealista.ui.detailcompose.DetailFragment2"
+        android:label="fragment_detail2"
+        tools:layout="@layout/activity_ads_detail">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="app://film/{id}" />
+    </fragment>
+
+</navigation>

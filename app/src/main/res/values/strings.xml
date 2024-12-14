@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PruebaIdealista</string>
+
+    <string name="ads">Ads</string>
+    <string name="price">Price: %1$2f</string>
+
+    <array name="images">
+        <item>@drawable/ic_launcher_background</item>
+    </array>
+</resources>
